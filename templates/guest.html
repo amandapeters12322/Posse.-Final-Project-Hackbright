@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}All Users{% endblock %}
+
+{% block body %}
+
+<h2>- See Your Events Below -</h2>
+<ul>
+  {% for event in guest_event %}
+  <li>
+    <a href="/show_event_details/{{ event.event_id }}">
+      {{ event.event_name }}
+    </a>
+   </li>
+{% endfor %} 
+</ul>
+
+{% endblock %}

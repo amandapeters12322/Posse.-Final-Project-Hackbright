@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}All Users{% endblock %}
+
+{% block body %}
+  
+
+<html-dashboard lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/css/project.css">
+<link rel="stylesheet" href="/static/css/event_page.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/A.style.css.pagespeed.cf.vym214RDle.css">
+</head>
+
+
+
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="/static/group-overlook.mp4" type="video/mp4">
+  </video>
+<!-- Account: Update Profile Picture -->
+<div class="col-6 p-4 center">
+    <div id="profile-pic-display" class="center">
+    </div><!-- shows profile pic -->
+    <form action="/upload-profile-pic" method="POST" enctype="multipart/form-data" id="profile-pic-form" name="profile-pic-form" style="text-align: center">
+      <div class="mb-3" style="text-align: center">
+        <!-- File upload -->
+        <h3 class="body-font2">
+          <div class="account-div">
+          <span class="dash-name-font">Update Profile Picture</span></h3>
+        <input type="file" class="form-control" id="profile-img" aria-describedby="profilePicture" name="profile-img">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+  <!-- End of upload profile photo -->
+
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+    <script src="/static/js/project.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+<script src="js/popper.js+bootstrap.min.js.pagespeed.jc.qtuvqM8cmH.js"></script><script>eval(mod_pagespeed_TCLu$tEmls);</script>
+<script>eval(mod_pagespeed_pXXKuxhcnK);</script>
+<script src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b2fb5f80f7526a7","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.11.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+    
+  </body>
+{% endblock %}

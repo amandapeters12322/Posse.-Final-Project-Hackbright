@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block title %}All Users{% endblock %}
+
+{% block body %}
+
+<head>
+  <head>
+    <meta charset="utf-8">
+    <title>Event Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/project.css">
+    <meta name="robots" content="noindex, follow">
+    </head>
+</head>
+  <body>
+
+    <video autoplay muted loop id="myVideo">
+      <source src="/static/pinksparklers.mp4" type="video/mp4">
+    </video>
+
+
+    <div id="booking" class="section">
+      <div class="section-center">
+      <div class="container">
+      <div class="row">
+      <div class="col-md-5 col-md-push-5">
+      <div class="booking-cta">
+      <h1 class="posse-font-carousel">Want to Create a New Event?</h1>
+      <p>Complete the form to get started.
+      </p>
+      </div>
+      </div>
+      <div class="col-md-7 col-md-pull-7">
+      <div class="booking-form">
+
+        
+      <form action="/create_event" method="POST">
+      <div class="form-group">
+      <span class="form-label"><b>Event Name:</b></span>
+      <input class="form-control" type="text" name="event_name" placeholder="Event Name">
+      </div>
+      <div class="row">
+      <div class="col-sm-6">
+      <div class="form-group">
+      <span class="form-label"><b>Location:</b></span>
+      <input class="form-control" type="text" name="location" placeholder="Street Address">
+      </div>
+      </div>
+      <div class="col-sm-6">
+      <div class="form-group">
+      <span class="form-label"><b>Venue:</b></span>
+      <input class="form-control" type="text" name="venue" placeholder="Venue Name">
+      </div>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-sm-4">
+      <div class="form-group">
+      <span class="form-label"><b>Event Date:</b></span>
+      <input class="form-control" type="text" name="evtdate" placeholder="MM/DD/YYYY">
+      </div>
+      </div>
+      <div class="col-sm-4">
+      <div class="form-group">
+      <span class="form-label"><b>Event Time:</b></span>
+      <input class="form-control" type="text" name="evttime" placeholder="HH:MM AM or PM" >
+      </div>
+      </div>
+      <div class="col-sm-4">
+      <div class="form-group">
+      <span class="form-label"><b>RSVP Date Deadline:</b></span>
+      <input class="form-control" type="text" name="rsvp_date" placeholder="MM/DD/YYYY">
+      </div>
+      </div>
+      <div class="form-group">
+        <span class="form-label"><b>Event Description:</b></span>
+        <input class="form-control" type="text" name="event_description" placeholder="Describe your event for your guests">
+        </div>
+      <div class="col-md-12">
+      <div class="form-btn-submit" style="text-align: center">
+      <button class="submit-btn">Submit</button>
+      </div>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+      
+
+
+
+ <!-- -------------------------Footer------------------------------- -->
+
+ <footer class="py-5 bg-dark posse-font-footer">
+  <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Posse. Established 2021</p></div>
+ </footer>
+  <!-- ------------------------- END Footer------------------------------- -->
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-23581568-13');
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b78a52d2f0126bb","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.11.0","si":100}' crossorigin="anonymous"></script>
+</body>
+  
+  {% endblock %}
+
+  
+  
+
+
+

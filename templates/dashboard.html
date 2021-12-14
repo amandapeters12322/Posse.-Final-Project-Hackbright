@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block title %}All Users{% endblock %}
+
+{% block body %}
+  
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/css/project.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="/static/group-overlook.mp4" type="video/mp4">
+  </video>
+
+   <div class="container center">
+     <div id="profile-pic-display">
+       <!-- shows profile pic -->
+        <div class="trick"> 
+        </div>
+      </div>
+      <ul class="text">{{user.fname}} {{user.lname}}</ul>
+      <!-- <div class="text1">Member Since: {{user.start_date}}</div> -->
+
+
+
+<!-- --------------------------DROP DOWN ACCORDIONS------------------------------------->
+      <div class="m-4" id="accordion">
+        <div class="accordion div-button-size" id="myAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button type="button" class="accordion-button collapsed dash-accordion-font2" data-bs-toggle="collapse" data-bs-target="#collapseOne">GUEST</button>									
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                    <div class="card-body">
+                      
+                          <dl class="dash-accordion-font1"> <u><i class="bi bi-envelope"></i> <b>Your Event Invites: </b></u> <!--Shows events with RSVP status of "No response"-->
+                          {% for event in guest_event %}    
+                          <ul>
+                              <a href="/show_event_details/{{ event.event_id }}">
+                                {{ event.event_name }}
+                              </a>
+                            <ul>
+                          {% endfor %}
+                          </dl>
+
+                          <dl class="dash-accordion-font1"> <u><i class="bi bi-envelope-open"></i> <b>Your Attending Events: </b></u> <!--Shows event with RSVP status of YES-->
+                            {% for event in guest_attending %} 
+                            <ul>
+                                <a href="/show_event_details/{{ event.event_id }}">
+                                  <b>{{ event.event_name }}:</b> {{event.evtdate}} at {{event.evttime}}
+                                </a>
+                                <ul>
+                            {% endfor %}
+                            </dl>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button type="button" class="accordion-button collapsed dash-accordion-font2" data-bs-toggle="collapse" data-bs-target="#collapseTwo">HOST</button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                    <div class="card-body">
+                        <p>
+                          <p id="center" style="text-align: center"><a class="btn btn-lg btn-primary" href="/host">Create a New Event</a></p>
+                          <hr class="featurette-divider-dash">
+                          <dl class="dash-accordion-font1"> <u><b>Your Hosted Events:</b></u>
+                            {% for event in host_event %}
+                            <ul>
+                              <a href="/show_event_details/{{ event.event_id }}">
+                                {{ event.event_name }}: {{event.evtdate}} at {{event.evttime}}
+                              </a>
+                              </ul>
+                            </dl>
+                          {% endfor %} 
+                          </dd>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+
+            <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">ADD SOMETHING?</button>                     
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                    <div class="card-body">
+                      
+                      <p>
+                        <a href="#!">Click here to go somewhere</a>
+                        <dl> Your Hosted Events:
+                          {% for event in host_event %}
+                          <ul>
+                            <a href="/show_event_details/{{ event.event_id }}">
+                              {{ event.event_name }}
+                            </a>
+                            </ul>
+                          </dl>
+                        {% endfor %} 
+                        </dd>
+                      </p>  
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+  </div>
+    
+        <!-- -------------------------Footer------------------------------- -->
+
+<footer class="py-5 bg-dark posse-font-footer">
+  <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Posse. Member Since: {{user.start_date}}</p></div>
+ </footer>
+        <!-- -------------------------Footer------------------------------- -->
+
+<script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+</script>
+<script src="/static/js/project.js"></script>
+<script src="js/jquery.min.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b2fb5f80f7526a7","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.11.0","si":100}' crossorigin="anonymous"></script>
+</body>
+
+{% endblock %}

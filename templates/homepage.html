@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% block title %}Event Plan Home{% endblock %}
+
+{% block body %}
+
+<main class="main-color">
+  <body class="main-color">
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video autoplay muted loop id="myhomeVideos">
+          <source src="/static/movienight.mp4" type="video/mp4">
+        </video>
+        <!-- <img src="static/img/sparklers.jpg" style="position:relative; left:0px; top:-100px"> -->
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="posse-font-carousel">Welcome to Posse.</h1>
+            <p><b>We're here to help plan your next social gathering.</b></p>
+            <p><a class="btn btn-lg btn-primary" href="#createaccount">Create an account today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <video autoplay muted loop id="myhomeVideos">
+          <source src="/static/hugchain.mp4" type="video/mp4">
+        </video>
+        <!-- <img src="static/img/fancydinner.jpg" style="position:relative; left:0px; top:-100px"> -->
+        <!--<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 class="posse-font-carousel">Plan, invite, enjoy.</h1>
+            <p><b>All your event planning needs in once place.</b></p>
+            <p><a class="btn btn-lg btn-primary" href="#login">Login to build your Posse</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <video autoplay muted loop id="myhomeVideos">
+          <source src="/static/familydinner.mp4" type="video/mp4">
+        </video>
+        <!-- <img src="static/img/setting_table.jpg"> -->
+        <!--<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class="posse-font-carousel">Easy to use, easy to stay connected.</h1>
+            <p><b>One platform, one purpose. Never miss an event update with our SMS notifications.</b></p>
+            <!-- <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+    {% for message in get_flashed_messages() %}
+    <p class="flash-msg2" style="text-align: center">{{ message }}</p>
+    {% endfor %}
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-calendar-day" viewBox="0 0 16 16">
+          <path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z"/>
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+        </svg>
+        <h2 class="posse-font-icon-header">Plan</h2>
+        <p class="homepage-p">Whether it's a birthday party, a wedding, a group trip, or a small dinner, you'll find that planning your event is quick and easy with Posse. Create an account, create a new event, or check in on your events you're hosting or attending. It's that simple.</p>
+        <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+        </svg>
+        <h2 class="posse-font-icon-header">Invite</h2>
+        <p class="homepage-p">Once your event is created, search for friends who have created accounts to add them to your guest list. You'll see their RSVP once they respond. Connect with guests on Posse without blending social media friendships. Keep it professional or personal, it's your choice.</p>
+        <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+        <h2 class="posse-font-icon-header">Stay Connected</h2>
+        <p class="homepage-p">Forget busy group text threads. No longer worry about event update notifications being lost in other notification threads. Post your comments, event updates, questions and more directly on the event page. Hosts and attending guests will receive instant SMS notifications when new posts are made.</p>
+        <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+        <div id="createaccount"></div>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"><span class="posse-font-feature">New to us? </span><span class="posse-font-feature-text-muted">Create an account to join!</span></h2>
+        <p class="lead homepage-p2">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+      </div>
+      <div class="col-md-5 photo-stack">
+         <!--transparent div with form on top--> 
+         <div class="stack-top">
+         <form action="/register" method="POST" class="div-adjust3">
+          <div class="text-center pt-3">
+            
+              <p class="posse-font-form">Complete the<span class="ps-1 posse-font-form">form below:</span></p> <small class="d-flex align-items-center justify-content-center mb-3">
+              </small>
+          </div>
+          <div class="row px-md-4 px-1 m-0">
+              <div class="col-12">
+              </div>
+              <div class="col-6"> <input type="text" class="form-control mb-4" name="fname" id="name" placeholder="First Name"> </div>
+              <div class="col-6"> <input type="text" class="form-control mb-4" name="lname" placeholder="Last Name"> </div>
+              <div class="col-6"> <input type="text" class="form-control mb-4" name="phone" placeholder="Phone # ex: +16123469987"> </div>
+              <div class="col-6"> <input type="email" class="form-control mb-4" name="email" id="email" placeholder="Email"> </div>
+              <div class="col-12"> <input type="password" class="form-control mb-4" name="password" id="pass" placeholder="Password"> </div>
+              <div class="col-12"> <input type="text" class="form-control mb-4" name="start_date" id="pass" placeholder="Today's Date MM/DD/YYYY"> </div>
+              <div class="col-12 create">
+                
+                  <button class="btn btn-primary py-3 ">
+                      <div class="d-flex align-items-center justify-content-between">
+                          <p class="button-homepage">Click to Join</p> <span class="fas fa-arrow-right "></span>
+                      </div>
+                  </button>
+                  </div> 
+              </div>
+              <div id="login"></div> <!-- scrolling nav to login form -->
+          </div>
+        </form>
+    </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"><span class="posse-font-feature">Already a user? </span><span class="posse-font-feature-text-muted">Login Here.</span></h2>
+        <p class="lead homepage-p2">We're so excited to be a part of your event.</p>
+      </div>
+      <div class="col-md-5 order-md-1 photo-stack2">
+          <form action="/login" method="POST" class="stack-top div-adjust2">
+            <div class="text-center pt-3">
+                <p class="posse-font-form">Welcome<span class="ps-1 posse-font-form">back to Posse.</span></p> <small class="d-flex align-items-center justify-content-center mb-3">
+                   </small>
+            </div>
+            <div class="row px-md-4 px-1 m-0">
+                <div class="col-12">
+                </div>
+                <div class="col-12"> <input type="text" class="form-control mb-4" name="email" id="name" placeholder="Email address"> </div>
+                <div class="col-12"> <input type="password" class="form-control mb-4" name="password" id="pass" placeholder="Password"> </div>
+                <div class="col-12 create">
+                    <button class="btn btn-primary py-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="button-homepage">Sign In</p> <span class="fas fa-arrow-right "></span>
+                        </div>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </form>
+      </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading" style="text-align: right;"><span class="posse-font-feature">Meet Amanda, </span><span class="posse-font-feature-text-muted">the developer.</span></h2>
+        <p class="lead homepage-p2" style="text-align: right;">Hover over image for contact information.</p>
+      </div>
+      <div class="col-md-5 photo-stack3">
+        <div class="wrapper div-adjust3">
+            <div class="profile">
+                <div class="overlay">
+                    <div class="about d-flex flex-column">
+                        <h4 class="posse-font">Amanda Peters</h4> <span>Software Developer</span>
+                    </div>
+                    <ul class="social-icons">
+                        <li><a href="https://github.com/amandapeters12322"><i class="bi bi-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/amanda-peters-8b962950/"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="mailto:amanda.nielsen@me.com"><i class="bi bi-envelope"></i></a></li>
+                        <li><a href="https://www.instagram.com/amandalynnielsen/"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+
+    <!-- /END THE FEATURETTES -->
+  </div>
+  </div>
+  </div><!-- /.container -->
+  
+
+
+  <!-- FOOTER -->
+  <footer class="py-5 bg-dark footer-container">
+    <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white posse-font-footer">Posse. Established 2021</p></div>
+    <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white posse-font-footer"><a href="#">Back to top</a></p></div>
+  </footer>
+</body>
+</main>
+  <script src="/static/js/project.js"></script>
+
+{% endblock %}
